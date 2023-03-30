@@ -1,0 +1,22 @@
+{
+  "name": "weather-api",
+  "version": "18.7.0",
+  "description": "A weather API implemented with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mertSezerO/Weather-APP.git"
+  },
+  "author": "Mert Oktay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mertSezerO/Weather-APP/issues"
+  },
+  "homepage": "https://github.com/mertSezerO/Weather-APP",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
