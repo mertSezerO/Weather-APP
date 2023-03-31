@@ -1,7 +1,13 @@
 const express = require('express');
 const https = require('https');
+const engine = require('consolidate')
 
 const app = express();
+
+app.set('views', __dirname + '/public/Views')
+app.engine('html', engine.mustache)
+app.set('view-engine', 'html')
+app.use('/public', express.static('public'))
 
 app.get('/', (req, res) => {
     res.render('index.html')
@@ -19,7 +25,8 @@ app.post('/', (req, res) => {
             weatherData = JSON.parse(data)
         })
     })
-    res.render('response.html', {temp: weatherData.main.temp, desc: weatherData.weather.description, wind: weatherData.wind.speed})
+    res.render('response.html')
+    /*, {temp: weatherData.main.temp, desc: weatherData.weather.description, wind: weatherData.wind.speed}*/
 })
 
 app.listen(3000, () => {
