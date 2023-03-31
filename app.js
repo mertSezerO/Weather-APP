@@ -27,8 +27,7 @@ app.post('/', (req, res) => {
     https.get(url, (resp) => {
         resp.on('data', (data) => {
             const weatherData = JSON.parse(data)
-            console.log(weatherData)
-            res.render('response.ejs', {temp: weatherData.main.temp, desc: weatherData.weather.description, wind: weatherData.wind.speed, city: weatherData.name})
+            res.render('response.ejs', {temp: weatherData.main.temp, desc: weatherData.weather[0].description, wind: weatherData.wind.speed, city: weatherData.name})
         })
     })
 })

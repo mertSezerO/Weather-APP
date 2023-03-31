@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8" />
     <title>Weather APP</title>
@@ -10,21 +10,26 @@
             <section>
                 <h1><%= city %></h1>
             </section>
-            <div class="upper">
-                <h1><%= desc %></h1>
+            <div class="upper" id="upper">
+                <p><%= desc %></p>
             </div>
             <div class="lower">
                 <ul>
                     <li>
                         <h3>Temperature</h3>
-                        <%= temp %>
+                        <h3><%= temp %></h3>
                     </li>
                     <li>
                         <h3>Wind Speed</h3>
-                        <%= wind %>
+                        <h3><%= wind %></h3>
                     </li>
                 </ul>
             </div>
+            <section id="button">
+                <form action="" method="get">
+                    <button type="submit"><p>Return</p></button>
+                </form>
+            </section>
         </div>
     </div>
 </body>

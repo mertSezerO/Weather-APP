@@ -14,8 +14,8 @@ body
 {
     width: 100%;
     height: 100%;
-    /*background-color: #50aeff; 0047AB	0F52BA 191970 0F52BA 296ba2 4682B4 1864a4 rgba(86, 141, 229, 1)*/
-    background-color: #1864a4;
+    /*background-color: #50aeff; 0047AB	0F52BA 191970 0F52BA 296ba2 4682B4 1864a4 rgba(86, 141, 229, 1) 1e5c8f*/
+    background-color: #1e5c8f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,8 +32,8 @@ body
 }
 .main h1
 {
-    color: #ff5d3a;
-    /*color: ff814b;fc8956, ff8550 ff773c FF5F1F FF5F15 ff5d3a FF5733*/
+    color: #dfdfdf;
+    /*color: ff814b;fc8956, ff8550 ff773c FF5F1F FF5F15 ff5d3a FF5733 fe2d00*/
 }
 .main #city
 {
