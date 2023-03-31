@@ -16,6 +16,11 @@
                     <button type="submit" name="show"><p>Show</p></button>
                 </section>
             </form>
+            <section class="error">
+                <% if (typeof error !== 'undefined') { %>
+                    <%= error %>
+                <% } %>
+            </section>
         </div>
     </div>
 </body>

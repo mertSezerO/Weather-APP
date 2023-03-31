@@ -46,6 +46,14 @@ body
     justify-content: center;
     align-items: center;
 }
+.main .error
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: #fe2d00;
+}
 .main #citybar
 { 
     padding: 5%;

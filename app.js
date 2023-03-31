@@ -27,7 +27,11 @@ app.post('/', (req, res) => {
     https.get(url, (resp) => {
         resp.on('data', (data) => {
             const weatherData = JSON.parse(data)
-            res.render('response.ejs', {temp: weatherData.main.temp, desc: weatherData.weather[0].description, wind: weatherData.wind.speed, city: weatherData.name})
+            try{
+                res.render('response.ejs', {temp: weatherData.main.temp, desc: weatherData.weather[0].description, wind: weatherData.wind.speed, city: weatherData.name})
+            } catch{
+                res.render('index.ejs', {error: 'Please type a city that exists'})
+            }
         })
     })
 })
