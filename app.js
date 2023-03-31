@@ -4,29 +4,33 @@ const engine = require('consolidate')
 
 const app = express();
 
-app.set('views', __dirname + '/public/Views')
+/*app.set('views', __dirname + '/public/Views')
 app.engine('html', engine.mustache)
 app.set('view-engine', 'html')
+app.use('/public', express.static('public'))*/
+
+app.set('views', __dirname + '/public/Views')
+app.set('view-engine', 'ejs')
+app.use(express.urlencoded({ extended: false }))
 app.use('/public', express.static('public'))
 
 app.get('/', (req, res) => {
-    res.render('index.html')
+    res.render('index.ejs')
 })
 
 app.post('/', (req, res) => {
-    const endpoint = 'http://api.openweathermap.org/data/2.5/weather?'
+    const endpoint = 'https://api.openweathermap.org/data/2.5/weather?'
     const city = 'q=' + req.body.city
     const key = 'APPID=3e89ae0c8c016e649bb1b3938347fb40'
     const units = 'units=metric'
     const url = endpoint + city + '&' + key + '&' + units
-    let weatherData
     https.get(url, (resp) => {
         resp.on('data', (data) => {
-            weatherData = JSON.parse(data)
+            const weatherData = JSON.parse(data)
+            console.log(weatherData)
+            res.render('response.ejs', {temp: weatherData.main.temp, desc: weatherData.weather.description, wind: weatherData.wind.speed, city: weatherData.name})
         })
     })
-    res.render('response.html')
-    /*, {temp: weatherData.main.temp, desc: weatherData.weather.description, wind: weatherData.wind.speed}*/
 })
 
 app.listen(3000, () => {

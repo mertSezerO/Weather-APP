@@ -1,0 +1,30 @@
+!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Weather APP</title>
+    <link href="/public/Assets/styleresponse.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="app">
+        <div class="main">
+            <section>
+                <h1><%= city %></h1>
+            </section>
+            <div class="upper">
+                <h1><%= desc %></h1>
+            </div>
+            <div class="lower">
+                <ul>
+                    <li>
+                        <h3>Temperature</h3>
+                        <%= temp %>
+                    </li>
+                    <li>
+                        <h3>Wind Speed</h3>
+                        <%= wind %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
