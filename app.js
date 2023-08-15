@@ -4,11 +4,6 @@ const engine = require('consolidate')
 
 const app = express();
 
-/*app.set('views', __dirname + '/public/Views')
-app.engine('html', engine.mustache)
-app.set('view-engine', 'html')
-app.use('/public', express.static('public'))*/
-
 app.set('views', __dirname + '/public/Views')
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
